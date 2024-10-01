@@ -37,3 +37,19 @@ def pindah_pemain(pindah_team, lokasi_team, name):
     else:
         return f"Pemain '{name}' tidak ditemukan di {team_name(pindah_team)}."
 
+# Fungsi untuk menghitung rata-rata statistik
+def perhitungan_average(team):
+    if not team:
+        return 0
+    total = sum(details['statistik'] for details in team.values())
+    average = total / len(team)
+    return average
+
+# Fungsi untuk menampilkan rata-rata nilai di tim
+def show_average(team):
+    average = perhitungan_average(team)
+    print(f"Rata-rata statistik di {team_name(team)}: {average:.2f}")        
+
+# Fungsi untuk mendapatkan nama tim berdasarkan bagan
+def team_name(team):
+    return "Tim Gilak" if team is team_gilak else "Tim Random" 
