@@ -53,3 +53,41 @@ def show_average(team):
 # Fungsi untuk mendapatkan nama tim berdasarkan bagan
 def team_name(team):
     return "Tim Gilak" if team is team_gilak else "Tim Random" 
+
+def main():
+    while True:
+        bagan_tim()
+        pilih = input("Pilih opsi (1-9): ")    
+        
+        if pilih == '1':
+            name = input("Masukkan nama pemain: ")
+            role = input("Masukkan role yang akan diisi: ")
+            statistik = float(input("Masukkan rata-rata skill player: "))
+            print(masukan_namadanrole(team_gilak, name, role, statistik))
+        elif pilih == '2':
+            name = input("Masukkan nama pemain: ")
+            role = input("Masukkan role yang akan diisi: ")
+            statistik = float(input("Masukkan rata-rata skill player: "))
+            print(masukan_namadanrole(team_random, name, role, statistik))
+        elif pilih == '3':
+            tampilkan_(team_gilak)
+        elif pilih == '4':
+            tampilkan_(team_random)
+        elif pilih == '5':
+            name = input("Masukkan nama pemain yang ingin dipindahkan dari Tim Gilak: ")
+            print(pindah_pemain(team_gilak, team_random, name))
+        elif pilih == '6':
+            name = input("Masukkan nama pemain yang ingin dipindahkan dari Tim Random: ")
+            print(pindah_pemain(team_random, team_gilak, name))
+        elif pilih == '7':
+            show_average(team_gilak)
+        elif pilih == '8':
+            show_average(team_random)
+        elif pilih == '9':
+            print("Terima kasih dan sampai jumpa!")
+            break
+        else:
+            print("Maaf, pilihan Anda tidak valid.")    
+            
+if name == "main":
+    main()
